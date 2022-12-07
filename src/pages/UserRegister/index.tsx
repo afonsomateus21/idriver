@@ -1,5 +1,6 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { SideBar } from "../../components/SideBar";
+import { api } from "../../services/api";
 import { Container, Content } from "./styles";
 
 type InputsType = {
@@ -17,7 +18,32 @@ type InputsType = {
 export function UserRegister() {
   const { register, handleSubmit } = useForm<InputsType>();
 
-  const onSubmit: SubmitHandler<InputsType> = data => console.log(data);
+  const onSubmit: SubmitHandler<InputsType> = async data => {
+    const driver = {
+      "cnh": data.cnh,
+      "name": data.name,
+      "address": data.address,
+      "email": data.email,
+      "phone": data.phone,
+      "licensePlate": data.licensePlate
+    }
+
+    const car = {
+      "licensePlate": data.licensePlate,
+      "model": data.model,
+      "year": data.year,
+      "carMaker": data.carMaker
+    }
+
+    const responseDriver = await api.post('drivers', driver)
+
+    const responseCar = await api.post('cars', car)
+
+    return {
+      responseDriver,
+      responseCar
+    }
+  }
 
   return (
     <>
