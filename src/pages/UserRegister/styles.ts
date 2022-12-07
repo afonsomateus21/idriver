@@ -44,7 +44,6 @@ export const Content = styled.form`
     color: white;
     text-transform: uppercase;
     border: none;
-    /* margin-top: 40px; */
     padding: 1rem;
     font-size: 1rem;
     font-weight: 100;
