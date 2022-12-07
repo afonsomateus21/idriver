@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { DriverInfo } from "../../components/DriverInfo";
 import { SideBar } from "../../components/SideBar";
 import { api } from "../../services/api";
-import { Container } from "./styles";
+import { Container, Content } from "./styles";
 
 type Driver = {
   name: string;
@@ -35,21 +35,23 @@ export function Home() {
     <>
       <SideBar />
       <Container>
-        {
-          drivers.map((driver) => 
-            <DriverInfo 
-              name={driver.name}
-              cnh={driver.cnh}
-              address={driver.address}
-              email={driver.email}
-              phone={driver.phone}
-              licensePlate={driver.licensePlate}
-              model={driver.model}
-              year={driver.year}
-              carMaker={driver.carMaker}
-            />
-          )
-        }
+        <Content>
+          {
+            drivers.map((driver) => 
+              <DriverInfo 
+                name={driver.name}
+                cnh={driver.cnh}
+                address={driver.address}
+                email={driver.email}
+                phone={driver.phone}
+                licensePlate={driver.licensePlate}
+                model={driver.model}
+                year={driver.year}
+                carMaker={driver.carMaker}
+              />
+            )
+          }
+        </Content>
       </Container>
     </>
   )

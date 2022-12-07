@@ -4,7 +4,7 @@ export const Container = styled.button`
   border: 0;
   font-size: 1.25rem;
   background: transparent;
-  width: 50%;
+  width: 70%;
   padding: 0.4rem;
   display: flex;
   justify-content: space-between;
@@ -20,6 +20,6 @@ export const Container = styled.button`
   a {
     text-decoration: none;
     color: var(--white);
-    letter-spacing: 2px;
+    letter-spacing: 1px;
   }
 `
