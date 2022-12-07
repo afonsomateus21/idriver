@@ -25,24 +25,15 @@ export function UserRegister() {
       "address": data.address,
       "email": data.email,
       "phone": data.phone,
-      "licensePlate": data.licensePlate
-    }
-
-    const car = {
       "licensePlate": data.licensePlate,
       "model": data.model,
       "year": data.year,
       "carMaker": data.carMaker
     }
 
-    const responseDriver = await api.post('drivers', driver)
+    const response = await api.post('drivers', driver);
 
-    const responseCar = await api.post('cars', car)
-
-    return {
-      responseDriver,
-      responseCar
-    }
+    return response.data;
   }
 
   return (
