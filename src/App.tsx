@@ -3,13 +3,11 @@ import { Login } from './pages/Login';
 import { GlobalStyle } from './styles/global';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { UserRegister } from './pages/UserRegister';
-import { Header } from './components/Header';
 import { PrivateRoutes } from './utils/PrivateRoute';
 
 export function App() {
   return (
     <Router>
-      <Header />
       <Routes>
         <Route element={<PrivateRoutes />}>
           <Route path="/users" element={ <Home /> } />

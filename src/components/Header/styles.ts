@@ -18,11 +18,4 @@ export const Content = styled.div`
     font-weight: 600;
     color: var(--white);
   }
-
-  button {
-    border: 0;
-    background: transparent;
-    color: var(--white);
-    font-size: 1.2rem;
-  }
 `
