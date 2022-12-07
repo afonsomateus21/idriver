@@ -4,13 +4,17 @@ export const Container = styled.button`
   border: 0;
   font-size: 1.25rem;
   background: transparent;
-  color: var(--white);
-
+  
   &:hover {
-    filter: brightness(0.9);;
+    filter: brightness(0.7);;
   }
 
   & + button {
     margin-top: 2rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--white);
   }
 `

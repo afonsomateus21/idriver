@@ -10,8 +10,18 @@ export const Content = styled.div`
 
   padding: 2rem 1rem;
 
+  display: flex;
+  justify-content: space-between;
+
   h1 {
     font-weight: 600;
     color: var(--white);
+  }
+
+  button {
+    border: 0;
+    background: transparent;
+    color: var(--white);
+    font-size: 1.2rem;
   }
 `
