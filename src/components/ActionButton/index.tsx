@@ -2,10 +2,12 @@ import { Button } from "./styles";
 
 interface ActionButtonProps {
   buttonTitle: string;
-  onClick: () => void;
+  onClick?: () => void;
+  type?: string;
+  form?: string;
 }
 
-export function ActionButton({ buttonTitle, onClick }: ActionButtonProps) {
+export function ActionButton({ buttonTitle, onClick, ...rest }: ActionButtonProps) {
   return (
     <Button onClick={onClick}>
       { buttonTitle }
