@@ -3,6 +3,7 @@ import { DriverInfo } from "../../components/DriverInfo";
 import { SideBar } from "../../components/SideBar";
 import { api } from "../../services/api";
 import { Container, Content } from "./styles";
+import Modal from 'react-modal';
 
 type Driver = {
   name: string;
@@ -29,8 +30,6 @@ export function Home() {
       })
   },[]);
 
-  console.log(drivers);
-
   return (
     <>
       <SideBar />
@@ -39,6 +38,7 @@ export function Home() {
           {
             drivers.map((driver) => 
               <DriverInfo 
+                key={driver.cnh}
                 name={driver.name}
                 cnh={driver.cnh}
                 address={driver.address}

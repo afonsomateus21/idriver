@@ -5,8 +5,10 @@ export const Container = styled.main`
   position: absolute;
   left: 13rem;
   width: 88%;
+`
 
-  form {
+export const Form = styled.form`
+  
     display: flex;
     justify-content: center;
     margin-top: 20px;
@@ -33,5 +35,9 @@ export const Container = styled.main`
       width: 100px;
       height: 40px;
     }
-  }
+  
+`
+
+export const Content = styled.div`
+  margin: 0 auto;
 `

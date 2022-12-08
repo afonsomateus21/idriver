@@ -1,5 +1,5 @@
 import { SideBar } from "../../components/SideBar";
-import { Container } from "./styles";
+import { Container, Content, Form } from "./styles";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { DriverInfo } from "../../components/DriverInfo";
 
@@ -29,22 +29,24 @@ export function SearchUser() {
     <>
       <SideBar />
       <Container>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <Form onSubmit={handleSubmit(onSubmit)}>
           <input type='text' />
           <button type="submit">Pesquisar</button>
-        </form>
+        </Form>
 
-        <DriverInfo 
-          name="Afonso"
-          cnh="00000"
-          address="josé vilar"
-          email="teste@gmail.com"
-          phone="8591212121"
-          licensePlate="aaa-9999"
-          model="celta"
-          year="2013"
-          carMaker="Chevrolet"
-        />
+        <Content>
+          <DriverInfo 
+            name="Afonso"
+            cnh="00000"
+            address="josé vilar"
+            email="teste@gmail.com"
+            phone="8591212121"
+            licensePlate="aaa-9999"
+            model="celta"
+            year="2013"
+            carMaker="Chevrolet"
+          />
+        </Content>
       </Container>
     </>
   );

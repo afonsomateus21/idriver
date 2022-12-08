@@ -1,5 +1,6 @@
+import { SubmitHandler, useForm } from "react-hook-form";
 import { ActionButton } from "../ActionButton";
-import { Container } from "./styles";
+import { Container, ButtonContainer } from "./styles";
 
 interface DriverInfoProps {
   name: string;
@@ -24,23 +25,67 @@ export function DriverInfo({
   year,
   carMaker
  }: DriverInfoProps) {
+  const { register, handleSubmit } = useForm<DriverInfoProps>();
+
+  const onSubmit: SubmitHandler<DriverInfoProps> = async data => {
+  }
+
   return (
     <Container>
-     <h1>Dados</h1>
-     <span><strong>Nome:</strong> {name}</span>
-     <span><strong>CNH:</strong> {cnh}</span>
-     <span><strong>Endereço:</strong> {address}</span>
-     <span><strong>Email:</strong> {email}</span>
-     <span><strong>Telefone:</strong> {phone}</span>
-     <span><strong>Placa:</strong> {licensePlate}</span>
-     <span><strong>Modelo:</strong> {model}</span>
-     <span><strong>Ano:</strong> {year}</span>
-     <span><strong>Montadora:</strong> {carMaker}</span>
+      <h1>{name}</h1>
+      
 
-     <div>
-       <ActionButton buttonTitle="editar" onClick={() => {}} />
-       <ActionButton buttonTitle="apagar" onClick={() => {}} />
-     </div>
+      <form>
+        <div>
+          <label htmlFor="cnh">Número da CNH</label>
+          <input value={cnh} placeholder="Digite o número da sua CNH" {...register("cnh")} />
+        </div>
+
+        <div>
+          <label htmlFor="name">Nome</label>
+          <input value={name} placeholder="Digite seu nome" {...register("name")} />
+        </div>
+        
+        <div>
+          <label htmlFor="address">Endereço</label>
+          <input value={address} placeholder="Digite o seu endereço" {...register("address")} />
+        </div>
+
+        <div>
+          <label htmlFor="email">Email</label>
+          <input value={email} placeholder="Digite o seu email" type="email" {...register("email")} />
+        </div>
+
+        <div>
+          <label htmlFor="phone">Número do telefone</label>
+          <input value={phone} placeholder="Digite seu telefone" {...register("phone")} />
+        </div>
+
+        <div>
+          <label htmlFor="licensePlate">Placa do Carro</label>
+          <input value={licensePlate} placeholder="Digite o número da sua placa" {...register("licensePlate")} />
+        </div>
+
+        <div>
+          <label htmlFor="model">Modelo do Carro</label>
+          <input value={carMaker} placeholder="Digite o modelo do seu carro" {...register("model")} />
+        </div>
+
+        <div>
+          <label htmlFor="year">Ano do Carro</label>
+          <input value={year} placeholder="Digite o ano do seu carro" {...register("year")} />
+        </div>
+
+        <div>
+          <label htmlFor="carMaker">Fabricante</label>
+          <input value={carMaker} placeholder="Digite o fabricante do seu carro" {...register("carMaker")} />
+        </div>
+      </form>
+
+      <ButtonContainer>
+        <ActionButton buttonTitle="editar" onClick={() => {}} />
+        <ActionButton buttonTitle="apagar" onClick={() => {}} />
+      </ButtonContainer>
     </Container>
   );
 }
