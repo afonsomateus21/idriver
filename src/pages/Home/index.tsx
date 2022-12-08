@@ -3,7 +3,6 @@ import { DriverInfo } from "../../components/DriverInfo";
 import { SideBar } from "../../components/SideBar";
 import { api } from "../../services/api";
 import { Container, Content } from "./styles";
-import Modal from 'react-modal';
 
 type Driver = {
   name: string;
